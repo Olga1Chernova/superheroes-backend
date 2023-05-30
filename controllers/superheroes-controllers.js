@@ -30,7 +30,7 @@ const getSuperById = async (req, res) => {
   const superheroId = req.params.id;
   const superhero = await Superhero.findById(superheroId);
   if (!superhero) {
-    throw HttpError(404, `Superhero with id ${id} wasn't found`)
+    throw HttpError(404, `Superhero with id ${superheroId} wasn't found`)
   }
   res.json(superhero);
 };
@@ -43,17 +43,16 @@ const updateSuper = async (req, res) => {
     runValidators: true,
   });
   if (!superhero) {
-    throw HttpError(404, `Superhero with id ${id} wasn't found`)
+    throw HttpError(404, `Superhero with id ${superheroId} wasn't found`)
   }
     res.json(superhero);
 };
 
-// Delete a superhero
 const deleteSuper = async (req, res) => {
   const superheroId = req.params.id;
   const superhero = await Superhero.findByIdAndDelete(superheroId);
   if (!superhero) {
-    throw HttpError(404, `Superhero with id ${id} wasn't found`)
+    throw HttpError(404, `Superhero with id ${superheroId} wasn't found`)
   }
   res.json(superhero);
 };

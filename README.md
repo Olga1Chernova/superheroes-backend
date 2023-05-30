@@ -1,10 +1,10 @@
 # superheroes-backend
 
-Superhero Application Backend
+# **Superhero Application Backend**
 
 This is the backend application for a superhero database. It provides endpoints for performing CRUD operations on the superhero model. The application is built using Node.js and includes unit tests for the main logic.
 
-Instructions to Run the Solution
+**Instructions to Run the Solution**
 
 To run the superhero application backend, please follow these steps:
 
@@ -14,7 +14,7 @@ To run the superhero application backend, please follow these steps:
 4. Alternatively, run the application in development mode using npm run start:dev. This will start the server using Nodemon, enabling automatic restart on file changes.
 5. Access the API endpoints to perform CRUD operations on the superhero model.
 
-Assumptions
+**Assumptions**
 
 - The backend application assumes that a MongoDB database is set up and configured correctly.
 - The database connection details and other configuration settings are provided separately.

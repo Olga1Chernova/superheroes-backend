@@ -1,6 +1,6 @@
 const express = require('express');
 
-const controller = require('../../controllers/contacts-controllers');
+const controller = require('../../controllers/superheroes-controllers');
 
 const { validateBody } = require('../../utils');
 
@@ -12,14 +12,12 @@ const router = express.Router();
 
 router.get('/', controller.getAllSupers);
 
-router.get('/:id', isValidId, controller.getSupersById);
+router.get('/:id', isValidId, controller.getSuperById);
 
 router.post('/',  validateBody(schemas.superheroJoiSchema), controller.addSuper);
 
 router.delete('/:id', isValidId, controller.deleteSuper);
 
-router.put('/:id', isValidId, validateBody(schemas.superheroJoiSchema), controller.updateContact);
-
-router.patch('/:id', isValidId, validateBody(schemas.updateSuper), controller.updateSuperById);
+router.put('/:id', isValidId, validateBody(schemas.superheroJoiSchema), controller.updateSuper);
 
 module.exports = router;

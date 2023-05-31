@@ -18,6 +18,6 @@ router.post('/',  validateBody(schemas.superheroJoiSchema), controller.addSuper)
 
 router.delete('/:id', isValidId, controller.deleteSuper);
 
-router.put('/:id', isValidId, validateBody(schemas.superheroJoiSchema), controller.updateSuper);
+router.put('/:id/update', isValidId, validateBody(schemas.superheroJoiSchema), controller.updateSuper);
 
 module.exports = router;

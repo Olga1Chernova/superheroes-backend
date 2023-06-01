@@ -14,7 +14,7 @@ router.get('/', controller.getAllSupers);
 
 router.get('/:id', isValidId, controller.getSuperById);
 
-router.post('/',  validateBody(schemas.superheroJoiSchema), controller.addSuper);
+router.post('/create',  validateBody(schemas.superheroJoiSchema), controller.addSuper);
 
 router.delete('/:id', isValidId, controller.deleteSuper);
 

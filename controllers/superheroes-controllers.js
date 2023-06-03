@@ -12,18 +12,22 @@ const addSuper = async (req, res) => {
 
 const getAllSupers = async (req, res) => {
   const { page = 1, limit = 5 } = req.query;
-    const options = {
+
+  const options = {
       skip: (parseInt(page) - 1) * parseInt(limit),
       limit: parseInt(limit),
     };
+
     const count = await Superhero.countDocuments();
     const superheroes = await Superhero.find({}, null, options);
+
     res.json({
       totalItems: count,
       currentPage: parseInt(page),
       totalPages: Math.ceil(count / parseInt(limit)),
       superheroes,
     });
+  
 };
 
 const getSuperById = async (req, res) => {

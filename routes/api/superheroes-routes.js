@@ -12,12 +12,12 @@ const router = express.Router();
 
 router.get('/', controller.getAllSupers);
 
-router.get('/:id', isValidId, controller.getSuperById);
+router.get('/info/:id', isValidId, controller.getSuperById);
 
 router.post('/create',  validateBody(schemas.superheroJoiSchema), controller.addSuper);
 
-router.delete('/:id', isValidId, controller.deleteSuper);
+router.delete('/info/:id', isValidId, controller.deleteSuper);
 
-router.put('/:id/update', isValidId, validateBody(schemas.superheroJoiSchema), controller.updateSuper);
+router.put('/info/:id/update', isValidId, validateBody(schemas.superheroJoiSchema), controller.updateSuper);
 
 module.exports = router;
